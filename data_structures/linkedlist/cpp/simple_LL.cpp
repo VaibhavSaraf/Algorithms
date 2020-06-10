@@ -70,7 +70,7 @@ public:
         newNode->next = headRef;
         headRef = newNode;
     }
-    void addAtLast(node *head,int data)
+    void addAtLast(node *&head,int data)
     {
         node *p=head;
         while(p->next!=NULL)
@@ -80,6 +80,15 @@ public:
         node *tail = new node(data);
         p->next = tail;
         tail->next = NULL;
+    }
+    void appendNode(node *&head,int data)
+    {
+        node *p = head;
+        while (p->next!=NULL)
+        {
+            p=p->next;
+        }
+        push(p->next,data);
     }
 };
 
@@ -102,5 +111,10 @@ int main()
     cout<<"Linked List after adding to last: ";
     l.printlinkedList(head);
     cout << "Length of Linked List: " << l.lenthOfLinkedList(head) << endl;
+    l.appendNode(head,17);
+    cout<<"Linked List after adding to last: ";
+    l.printlinkedList(head);
+    cout << "Length of Linked List: " << l.lenthOfLinkedList(head) << endl;
+
     return 0;
 }
