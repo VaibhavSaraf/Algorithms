@@ -17,8 +17,6 @@ vector <int> parseInt(string str)
     return arr;
 }
 
-
-
 int main()
 {
     string str;
