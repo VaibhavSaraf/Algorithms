@@ -11,12 +11,26 @@ int main()
         while (g--)
         {
             int n,p,q;
+            int ans = 0;
             cin>>p>>n>>q;
-            int arr[n];
-            memset(arr,p,sizeof(arr));
-
+            if(n%2)
+            {
+                if(p==q)
+                {
+                    ans = n/2;
+                }
+                else
+                {
+                    ans = n/2 + 1;
+                }
+            }
+            else
+            {
+                ans = n/2;
+            }
+            cout<<ans<<"\n";
         }
         
     }
-    return 
+    return 0;
 }
