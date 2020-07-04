@@ -10,9 +10,10 @@ int main()
     fast int n;
     cin >> n;
     int s[n];
-    int nestingDepth = 0, firstNestingDepth, lenghtMax = 0, firstLenghtMax;
+    int nestingDepth = 0, firstNestingDepth, lenghtMax = 0, firstLenghtMax = 0;
     stack<int> v;
     vector<int> t;
+    t.push_back(0);
     int i = 0;
     for (i = 0; i < n; i++)
     {
@@ -40,11 +41,17 @@ int main()
     }
     for (int i = 0; i < t.size() - 1; i++)
     {
+
         if (lenghtMax < (t[i + 1] - t[i]))
         {
             lenghtMax = t[i + 1] - t[i];
             firstLenghtMax = t[i] + 1;
         }
+    }
+    if (t.size() == 1)
+    {
+        lenghtMax = 2;
+        firstLenghtMax = 0;
     }
     // cout<<"nestingDepth: "<<nestingDepth<<"\n";
     // cout<<"firstNestingDepth: "<<firstNestingDepth<<"\n";
