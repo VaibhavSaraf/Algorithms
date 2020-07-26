@@ -94,7 +94,7 @@ public:
         /**
         * if node is leaf node => (direct delete)
         * if node has one child => (replace child by that node and delete current node)
-        * if node has 2 child => (replace node by max(node->right) then delete current node)
+        * if node has 2 child => (replace node by min(node->right) or max(node->left)  then delete current node)
         */
 
         if (root == NULL)
@@ -119,7 +119,7 @@ public:
                 root = NULL;
                 return root;
             }
-            // if root  have one child;
+            // if root have one child;
             else if(root->left==NULL)
             {
                 node *tmp = root;
@@ -143,7 +143,7 @@ public:
             }
             return root;
         }
-    }
+    }   
     node *find_min_node(node* root)
     {
         node *tmp = root;
