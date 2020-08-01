@@ -1,3 +1,24 @@
+/*
+A natural number is special if it consists of only digits and . 
+Find the number of pairs of сoprime special numbers (x,y) such that 1<=x<=y<=n
+
+. 
+
+Input format
+
+The first line contains an integer N (1 to 10^9)
+Output format
+
+Print a single number denoting the answer to the problem.
+
+10---->1
+
+*/
+
+
+
+
+
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
