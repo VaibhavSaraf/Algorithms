@@ -25,7 +25,7 @@ int main()
         rotate(q.begin(), q.begin() + q.size() - 1, q.end());
         q.push_front(v[i]);
     }
-    q.
+
     for (auto i : v)
     {
         cout << i << " ";
