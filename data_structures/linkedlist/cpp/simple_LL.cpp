@@ -95,7 +95,7 @@ public:
 int main()
 {
     LinkedList l;
-    node *head = l.createOneTwoThree();
+    node *head = NULL;
     cout << "Linked list: ";
     l.printlinkedList(head);
     cout << "Length of Linked List: " << l.lenthOfLinkedList(head) << endl;
