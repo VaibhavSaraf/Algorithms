@@ -61,14 +61,14 @@ public:
 
     void removedups(node *&head)
     {
-        unordered_map<int,int> umap;
+        unordered_map<int, int> umap;
         node *p = head;
         while (p->next != NULL)
         {
             umap[p->data]++;
             p = p->next;
         }
-        for(auto x : umap)
+        for (auto x : umap)
             cout<<x.first<<"->";
     }
     void removedups1(node *&head)
@@ -77,14 +77,34 @@ public:
         node *p = head;
         while (p->next != NULL)
         {
-            s.insert(p->data);
+            if (!s.count(p->data))
+            {
+                s.insert(p->data);
+                cout<<p->data<<"->";
+            }
             p = p->next;
         }
-        for(auto i = s.begin();i!=s.end();i++)
-        {
-            cout<<*i<<"->";
-        }
+        // for(auto i = s.begin();i!=s.end();i++)
+        // {
+        //     cout<<*i<<"->";
+        // }
     }
+    int kthlast(node *&head, int k)
+    {
+        node *p = head, *q = head;
+        for (int i=0;i<k;i++)
+        {
+            q = q->next; 
+        }
+        cout<<"q->data: "<<q->data<<"\n";
+        while (q!=NULL)
+        {
+            q=q->next;
+            p=p->next;
+        }
+        return p->data;
+    }
+
 };
 
 
@@ -93,10 +113,12 @@ int main()
     OJ;
     node *head = NULL;
     Linkedlist l;
-    
+
     int n;cin>>n;
-    l.createList(head,n);
-    l.removedups1(head);
-    // l.printlist(head);
+    l.createList(head, n);
+    // l.removedups1(head);
+    l.printlist(head);
+    cout<<endl;
+    cout<<l.kthlast(head,2);
     return 0;
 }
