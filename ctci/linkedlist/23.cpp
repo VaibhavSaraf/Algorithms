@@ -1,3 +1,8 @@
+/*  Delete middle node (not necessarily exact middle node) 
+    1->2->3->4->5->
+    if we want to delete 4 then linkedlist is 
+    1->2->3->5->
+*/
 #include<bits/stdc++.h>
 #define deb(x) cout << #x << "=" << x << endl
 #define OJ \
@@ -59,68 +64,52 @@ public:
         }
     }
 
-    void removedups(node *&head)
+    void deleten(node *&head,int k)
     {
-        unordered_map<int, int> umap;
-        node *p = head;
-        while (p->next != NULL)
+        if(k==head->data)
         {
-            umap[p->data]++;
-            p = p->next;
+            node *tmp = head;
+            head = tmp->next;
+            delete tmp;
+            return;
         }
-        for (auto x : umap)
-            cout<<x.first<<"->";
-    }
-    void removedups1(node *&head)
-    {
-        unordered_set <int> s;
         node *p = head;
-        while (p->next != NULL)
+        while (true)
         {
-            if (!s.count(p->data))
+            if(p->next->data!=k)
+                p=p->next;
+            else
             {
-                s.insert(p->data);
-                cout<<p->data<<"->";
+                break;
             }
-            p = p->next;
         }
-        // for(auto i = s.begin();i!=s.end();i++)
-        // {
-        //     cout<<*i<<"->";
-        // }
+        // if(p->next==NULL) return;
+        node *tmp = p->next;
+        p->next = tmp->next;
+        delete tmp;
     }
-    int kthlast(node *&head, int k)
+    void deleten2(node *&head,int k)
     {
-        node *p = head, *q = head;
-        for (int i=0;i<k;i++)
+        if(k==head->data)
         {
-            q = q->next; 
+            node *tmp = head;
+            head = tmp->next;
+            delete tmp;
+            return;
         }
-        cout<<"q->data: "<<q->data<<"\n";
-        while (q!=NULL)
+        node *p = head;
+        while (true)
         {
-            q=q->next;
-            p=p->next;
+            if(p->data!=k)
+                p=p->next;
+            else
+            {
+                break;
+            }
         }
-        return p->data;
+        p->data = p->next->data;
+        p->next = p->next->next;
     }
-    /* Recursive method */
-    int kthlastt(node *&head, int k)
-    {
-        if(head==NULL)
-        {
-            return 0;
-        }
-        int index = kthlastt(head->next,k) + 1;
-        if(index == k)
-        {
-            cout<<"kth last element: "<<head->data<<endl;
-        }
-        return index;
-    }
-
-
-
 };
 
 
@@ -132,9 +121,10 @@ int main()
 
     int n;cin>>n;
     l.createList(head, n);
-    // l.removedups1(head);
     l.printlist(head);
     cout<<endl;
-    // l.kthlastt(head,5);
+    l.deleten2(head,3);
+    // l.deleten(head,9);
+    l.printlist(head);
     return 0;
 }
