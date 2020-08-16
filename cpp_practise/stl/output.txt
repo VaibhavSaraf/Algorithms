@@ -1,0 +1,17 @@
+5 10 15 20 20 23 42 45 10 5 
+5 5 10 10 15 20 20 23 42 45 
+45 42 23 20 20 15 10 10 5 5 
+45
+5
+195
+not found
+Occurance of 11: 0
+The lower bound is at position: 5
+The upper bound is at position: 7
+5 10 15 20 23 42 45 
+Initial vector
+5 10 15 20 23 42 45 
+Vector after performing next permutation:
+5 10 15 20 23 45 42 Vector after performing previous permutation:
+5 10 15 20 23 42 45 Distance between first to max element: 6
+hello world
