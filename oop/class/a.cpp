@@ -1,15 +1,23 @@
 #include <iostream>
-#include <bits/stdc++.h>
+#define OJ \
+    freopen("input.txt", "r", stdin); \
+    freopen("output.txt", "w", stdout);
+#define deb(x) cout << #x << "=" << x << endl
 using namespace std;
+
 class abc
 {
 public:
-	abc();
-	~abc();
+	abc()
+	{
+		cout<<"abc construtor\n";
+	}
+
 };
 
 int main()
 {
-	cout<<"hello2"<<"\n";
+	OJ;
+	abc a;
 	return 0;
 }
