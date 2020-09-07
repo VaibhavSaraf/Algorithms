@@ -7,6 +7,7 @@ using namespace std;
 #define OJ                            \
     freopen("input.txt", "r", stdin); \
     freopen("output.txt", "w", stdout);
+
 int lower_bound(vector<int> &nums,int k)
 {
     int low = 0;
@@ -31,6 +32,7 @@ int lower_bound(vector<int> &nums,int k)
     }
     return result;
 }
+
 int upper_bound(vector<int> &nums,int k)
 {
     int low = 0;
