@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 #define OJ                            \
     freopen("input.txt", "r", stdin); \
@@ -22,9 +22,9 @@ public:
     LinkedList() : head{NULL}, tail{NULL} {}
     void add_Node(int d)
     {
-        node *tmp = new node (d);
+        node *tmp = new node(d);
 
-        if(head == NULL)
+        if (head == NULL)
         {
             head = tmp;
             tail = tmp;
@@ -38,35 +38,58 @@ public:
     void printList()
     {
         node *p = head;
-        while(p!=NULL)
+        while (p != NULL)
         {
-            cout<<p->data<<"->";
+            cout << p->data << "->";
             p = p->next;
         }
-        cout<<"\n";
+        cout << "\n";
+    }
+
+    void fun(node *p)
+    {
+        if(p==NULL)
+        {
+            return;
+        }
+        else
+        {
+            cout<<p->data<<"->";
+            fun(p->next);
+        } 
+    }
+
+    void fun1()
+    {
+        fun(head);
+    }
+
+    void reverse_List()
+    {
+    }
+    operator == ()
+    {
+
     }
 };
 
 int main()
 {
     OJ;
-    int n1,n2;
-    LinkedList l1,l2;
-    cin>>n1;
-    for(int i=0;i<n1;i++)
+    int n1;
+    LinkedList l1;
+    cin >> n1;
+    for (int i = 0; i < n1; i++)
     {
         int k;
-        cin>>k;
+        cin >> k;
         l1.add_Node(k);
     }
-    cin>>n2;
-    for(int i=0;i<n2;i++)
-    {
-        int k;
-        cin>>k;
-        l2.add_Node(k);
-    }
-    l1.printList();
+    l1.fun1();
+    LinkedList l2 = l1;
+    
     l2.printList();
+    
+
     return 0;
 }
