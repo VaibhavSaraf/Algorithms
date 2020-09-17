@@ -67,10 +67,6 @@ public:
     void reverse_List()
     {
     }
-    operator == ()
-    {
-
-    }
 };
 
 int main()
