@@ -11,33 +11,42 @@ using namespace std;
     freopen("output.txt", "w", stdout);
 bool buddyStrings(string A, string B)
 {
-    map<char, int> ma, mb;
+    ios_base::sync_with_stdio(0);
+    cin.tie(NULL);
+    cout.tie(NULL);
     if (A.length() != B.length())
         return false;
-    int c = 0;
-    for (int i = 0; i < A.length(); i++)
+    int f = -1, s = -1;
+    if (A == B)
     {
-        if (A[i] != B[i])
-            c++;
-        else
-            continue;
-        ma[A[i]]++;
-        mb[B[i]]++;
-    }
+        int cnt[26];
+        memset(cnt, 0, sizeof(cnt));
 
-    if (c == 2)
-        return true;
-    else if (c == 0)
-    {
-        for (auto x : ma)
-            if (x.second > 1)
+        for (int i = 0; i < A.length(); i++)
+            cnt[A[i] - 'a']++;
+
+        for (int c : cnt)
+            if (c > 1)
                 return true;
-            else
-                return false;
+        return false;
     }
     else
-        return false;
-    // return false;
+    {
+
+        for (int i = 0; i < A.length(); i++)
+        {
+            if (A[i] != B[i])
+            {
+                if (f == -1)
+                    f = i;
+                else if (s == -1)
+                    s = i;
+                else
+                    return false;
+            }
+        }
+    }
+    return (s != -1 && A[f] == B[s] && A[s] == B[f]);
 }
 int main()
 {
@@ -46,9 +55,9 @@ int main()
     // cin >> t;
     while (t--)
     {
-        string a,b;
-        cin>>a>>b;
-        cout<<buddyStrings(a,b)<<"\n";
+        string a, b;
+        cin >> a >> b;
+        cout << buddyStrings(a, b) << "\n";
     }
     return 0;
 }
