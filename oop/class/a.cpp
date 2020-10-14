@@ -135,20 +135,6 @@ void polymorphism()
 	// b->show(); // show base class
 }
 
-class E
-{
-public:
-	void xxx();
-};
-void E::xxx()
-{
-	cout<<"hello";
-}
-class D
-{
-public:
-	
-};
 
 
 
