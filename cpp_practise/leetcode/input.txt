@@ -1,1 +1,6 @@
-15
+5
+A
+AB
+ZY
+ABC
+ACHJ
