@@ -9,22 +9,34 @@ using namespace std;
 #define OJ                            \
     freopen("input.txt", "r", stdin); \
     freopen("output.txt", "w", stdout);
-int maxDistToClosest(vector<int> &seats)
+int maxDistToClosest(vector<int> &a)
 {
+    int maxi = 0;
+    int count = 0;
+    int i = 0;
+    while(i<a.size())
+    {
+        if(a[i]==1)
+        {
+            count = 0;
+            while()
+        }
+    }
 
 }
 int main()
 {
-
+    OJ;
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while (t--)
     {
         int n;
         cin>>n;
         vector<int> seats(n);
-        for(int i=0;i<)
-        maxDistToClosest(seats);
+        for(int i=0;i<n;i++) cin>>seats[i];
+        cout<<maxDistToClosest(seats);
+        cout<<"\n";
     }
     return 0;
 }
