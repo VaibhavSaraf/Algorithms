@@ -9,18 +9,27 @@ using namespace std;
 #define OJ                            \
     freopen("input.txt", "r", stdin); \
     freopen("output.txt", "w", stdout);
-void solve()
-{
-    int i, j, n, m;
-}
+
 int main()
 {
+    // OJ;
+    fast;
+    int n;
+    cin >> n;
+    vector<ll> v(n);
+    for (int i = 0; i < n; i++)
+        cin >> v[i];
 
-    int t = 1;
-    cin >> t;
-    while (t--)
+    ll count = 0;
+
+    for (int i = 0; i < n - 1; i++)
     {
-        solve();
+        if (v[i] > v[i + 1])
+        {
+            count += v[i] - v[i + 1];
+            v[i + 1] = v[i];
+        }
     }
+    cout << count << "\n";
     return 0;
 }
