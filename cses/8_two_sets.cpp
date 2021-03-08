@@ -10,30 +10,61 @@ using namespace std;
     freopen("input.txt", "r", stdin); \
     freopen("output.txt", "w", stdout);
 
-ll sum(ll n)
-{
-    return n * (n + 1) / 2;
-}
 void solve()
 {
     ll n;
     cin >> n;
-    if ((sum(n) / 2) % 2 == 1)
+    vector<ll> a, b;
+    if (n % 4 == 0)
+    {
+        for (int i = 1; i <= n; i++)
+        {
+            if (i % 4 == 0 || i % 4 == 1)
+                a.push_back(i);
+            else
+                b.push_back(i);
+        }
+        cout << "YES"
+             << "\n";
+        cout << a.size() << "\n";
+        for (auto x : a)
+            cout << x << " ";
+        cout << "\n"
+             << b.size() << "\n";
+        for (auto x : b)
+            cout << x << " ";
+        cout << "\n";
+    }
+    else if (n % 4 == 3)
+    {
+        vector<ll> a, b;
+        for (int i = 1; i <= n; i++)
+        {
+            if (i % 4 == 1 || i % 4 == 2)
+                a.push_back(i);
+            else
+                b.push_back(i);
+        }
+        cout << "YES"
+             << "\n";
+        cout << a.size() << "\n";
+        for (auto x : a)
+            cout << x << " ";
+        cout << "\n"
+             << b.size() << "\n";
+        for (auto x : b)
+            cout << x << " ";
+        cout << "\n";
+    }
+    else
     {
         cout << "NO"
              << "\n";
     }
-    else
-    {
-        cout << "YES"
-             << "\n";
-            
-        
-    }
 }
 int main()
 {
-
+    // OJ;
     int t = 1;
     // cin >> t;
     while (t--)
