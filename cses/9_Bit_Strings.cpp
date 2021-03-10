@@ -9,7 +9,7 @@ using namespace std;
 #define OJ                            \
     freopen("input.txt", "r", stdin); \
     freopen("output.txt", "w", stdout);
-#define MOD 1000000009
+#define MOD 1000000007
 void solve()
 {
     ll n;

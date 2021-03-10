@@ -9,26 +9,46 @@ using namespace std;
 #define OJ                            \
     freopen("input.txt", "r", stdin); \
     freopen("output.txt", "w", stdout);
-
 void solve()
 {
-    ll x;
-    cin >> x;
-    ll s = 0, m = 1;
-    while (x >= s)
+    ll n;
+    cin >> n;
+    vector<ll> v(n);
+    for (int i = 0; i < n; i++)
+        cin >> v[i];
+    sort(v.begin(), v.end());
+    bool f = 0;
+    ll c = 0;
+    for (int i = 0; i < n; i++)
     {
-        s = pow(2, m);
-        m++;
+        if (i + 1 - v[i] < 0)
+        {
+            f = 1;
+            break;
+        }
+        c += i + 1 - v[i];
     }
-    ll t1 = pow(2, m - 2) - 1;
-    ll t2 = s - x;
-    cout << t1 * (t1 + t2) << "\n";
+    if (f == 1)
+    {
+        cout << "Second\n";
+    }
+    else
+    {
+        if (c % 2 == 1)
+        {
+            cout << "First\n";
+        }
+        else
+        {
+            cout << "Second\n";
+        }
+    }
 }
 int main()
 {
     // OJ;
     fast;
-    ll t = 1;
+    int t = 1;
     cin >> t;
     while (t--)
     {

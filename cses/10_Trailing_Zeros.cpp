@@ -9,27 +9,24 @@ using namespace std;
 #define OJ                            \
     freopen("input.txt", "r", stdin); \
     freopen("output.txt", "w", stdout);
-
 void solve()
 {
-    ll x;
-    cin >> x;
-    ll s = 0, m = 1;
-    while (x >= s)
+    ll n, c = 0;
+    cin >> n;
+
+    for (ll i = 5; i <= n; i = i * 5)
     {
-        s = pow(2, m);
-        m++;
+        c += (n / i);
     }
-    ll t1 = pow(2, m - 2) - 1;
-    ll t2 = s - x;
-    cout << t1 * (t1 + t2) << "\n";
+
+    cout << c;
 }
 int main()
 {
-    // OJ;
     fast;
-    ll t = 1;
-    cin >> t;
+    // OJ;
+    int t = 1;
+    // cin >> t;
     while (t--)
     {
         solve();
