@@ -11,18 +11,31 @@ using namespace std;
     freopen("output.txt", "w", stdout);
 bool solve()
 {
-    ll a,b;
-    cin>>a>>b;
-    if(abs(a-b)>=2) return false;
+    ll a, b;
+    cin >> a >> b;
+    if ((a + b) % 3 == 0 && 2 * a >= b && 2 * b >= a && (2 * b - a) / 3 + (2 * a - b) / 3 == (a + b) / 3)
+    {
+        return true;
+    }
+    else
+        return false;
 }
 int main()
 {
-
+    // OJ;
+    fast;
     int t = 1;
     cin >> t;
     while (t--)
     {
-        solve();
+        if (solve())
+        {
+            cout << "YES\n";
+        }
+        else
+        {
+            cout << "NO\n";
+        }
     }
     return 0;
 }
