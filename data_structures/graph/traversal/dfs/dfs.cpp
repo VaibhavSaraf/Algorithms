@@ -12,7 +12,7 @@ vector<bool> visited;
 
 void dfs(int v)
 {
-    cout << v << " ";
+    cout << "->" << v;
     visited[v] = true;
     for (int u : adj[v])
     {
@@ -49,7 +49,8 @@ int main()
         adj[x].push_back(y);
         adj[y].push_back(x);
     }
-    // printGraph(adj);
-    dfs(0);
+    printGraph(adj);
+    cout << "dfs: ";
+    dfs(1);
     return 0;
 }
