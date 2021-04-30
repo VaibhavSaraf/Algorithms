@@ -1,0 +1,4 @@
+component: 1 2 3 5 4 6 
+component: 7 8 9 
+component: 10 
+No of cc: 3
