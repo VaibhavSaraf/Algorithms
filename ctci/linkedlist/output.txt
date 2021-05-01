@@ -1,2 +1,2 @@
-A->B->C->D->E->C->
-loop detected at C.
+1->0->1->
+5
