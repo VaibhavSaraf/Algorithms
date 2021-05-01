@@ -1,1 +1,4 @@
-YES
+sub tree size of node 1 is 4
+sub tree size of node 2 is 3
+sub tree size of node 3 is 1
+sub tree size of node 4 is 1
