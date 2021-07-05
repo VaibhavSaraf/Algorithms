@@ -28,7 +28,7 @@ public:
 
 int main()
 {
-    OJ;
+    // OJ;
     myClass m(20);
     m.display();
     m = 33;

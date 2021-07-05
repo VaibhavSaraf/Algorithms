@@ -44,11 +44,11 @@ union myunion
 
 int main()
 {
-    OJ;
-    // xyz a;
-    // print_size();
-    // cout << sizeof(a) << endl;
-    // cout<<"area of square 10 "<<area(10)<<"\n";
+    // OJ;
+    xyz a;
+    print_size();
+    cout << sizeof(a) << endl;
+    cout<<"area of square 10 "<<area(10)<<"\n";
 
     myunion un;
     un.value = 0;
